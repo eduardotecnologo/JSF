@@ -1,1 +1,5 @@
 target
+/resources/META-INF/persistence.xml
+persistence.xml
+/target/m2e-wtp/web-resources/META-INF/maven/com.edudeveloper/prime-face-essencial/pom.properties
+/target/m2e-wtp/web-resources/META-INF/maven/com.edudeveloper/prime-face-essencial/pom.xml
