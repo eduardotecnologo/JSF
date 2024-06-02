@@ -87,6 +87,14 @@ public class Empresa implements Serializable {
         this.dataFundacao = dataFundacao;
     }
 
+    public TipoEmpresa getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoEmpresa tipo) {
+        this.tipo = tipo;
+    }
+
     public RamoAtividade getRamoAtividade() {
         return ramoAtividade;
     }
