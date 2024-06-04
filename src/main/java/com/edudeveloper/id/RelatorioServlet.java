@@ -13,7 +13,11 @@ import javax.inject.Inject;
 @WebServlet("/relatorio")
 public class RelatorioServlet extends HttpServlet{
     
-    @Inject
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Inject
     private RelatorioService relatorioService;
 
    @Override
