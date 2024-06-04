@@ -7,10 +7,10 @@ import javax.persistence.EntityTransaction;
 
 import com.edudeveloper.erp.repository.Inject;
 
-import jakarta.annotation.Priority;
-import jakarta.interceptor.AroundInvoke;
-import jakarta.interceptor.Interceptor;
-import jakarta.interceptor.InvocationContext;
+import javax.annotation.Priority;
+import javax.interceptor.AroundInvoke;
+import javax.interceptor.Interceptor;
+import javax.interceptor.InvocationContext;
 
 
 @Interceptor
@@ -25,13 +25,12 @@ public class TransacionalInterceptor implements Serializable {
 
 	@AroundInvoke
 	public Object invoke(InvocationContext context) throws Exception {
-		
 		EntityTransaction trx = manager.getTransaction();
 		boolean criador = false;
 
 		try {
 			if (!trx.isActive()) {
-				// truque para fazer rollback no que já passou
+				// sacada para fazer rollback no que já passou
 				// (senão, um futuro commit confirmaria até mesmo operações sem transação)
 				trx.begin();
 				trx.rollback();

@@ -8,8 +8,6 @@ import javax.persistence.TypedQuery;
 import com.edudeveloper.erp.model.Empresa;
 
 public class Empresas {
-    private static final long serialVersionUID = 1L;
-	
 	@Inject
 	private EntityManager manager;
 
@@ -20,11 +18,9 @@ public class Empresas {
 	public Empresas(EntityManager manager) {
 		this.manager = manager;
 	}
-
 	public Empresa porId(Long id) {
 		return manager.find(Empresa.class, id);
 	}
-
 	public List<Empresa> pesquisar(String nome) {
 		
 		String jpql = "from Empresa where razaoSocial like :nomeFantasia";
@@ -34,7 +30,6 @@ public class Empresas {
 		
 		return query.getResultList();
 	}
-	
 	public List<Empresa> todas() {
          return manager.createQuery("from Empresa", Empresa.class).getResultList();
     }
