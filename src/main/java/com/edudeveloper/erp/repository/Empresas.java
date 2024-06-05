@@ -22,12 +22,12 @@ public class Empresas {
 		return manager.find(Empresa.class, id);
 	}
 	public List<Empresa> pesquisar(String nome) {
-		
+
 		String jpql = "from Empresa where razaoSocial like :nomeFantasia";
-		
+
 		TypedQuery<Empresa> query = manager.createQuery(jpql, Empresa.class);
 		query.setParameter("nomeFantasia", nome + "%");
-		
+
 		return query.getResultList();
 	}
 	public List<Empresa> todas() {

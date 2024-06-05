@@ -43,20 +43,20 @@ public class Empresa implements Serializable {
     @ManyToOne
     @JoinColumn(name = "ramo_atividade_id", nullable = false)
     private RamoAtividade ramoAtividade;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 30)
     private TipoEmpresa tipo;
-    
+
     @Column(precision = 10, scale = 2)
     private BigDecimal faturamento;
-    
-    private BigDecimal getFaturamento() {
+
+    public BigDecimal getFaturamento() {
     	return faturamento;
     }
-    
+
     public void setFaturamento(BigDecimal faturamento) {
-    	this.faturamento = faturamento;
+        this.faturamento = faturamento;
     }
 
     public Long getId() {
@@ -127,9 +127,7 @@ public class Empresa implements Serializable {
     public boolean equals(Object obj) {
         if (this == obj)
             return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
+        if ((obj == null) || (getClass() != obj.getClass()))
             return false;
         Empresa other = (Empresa) obj;
         if (id == null) {
