@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class RamoAtividade implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -50,9 +50,7 @@ public class RamoAtividade implements Serializable {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
+		if ((obj == null) || (getClass() != obj.getClass()))
 			return false;
 		RamoAtividade other = (RamoAtividade) obj;
 		if (id == null) {
@@ -68,5 +66,5 @@ public class RamoAtividade implements Serializable {
 		return "RamoAtividade [id=" + id + "]";
 	}
 
-	
+
 }
