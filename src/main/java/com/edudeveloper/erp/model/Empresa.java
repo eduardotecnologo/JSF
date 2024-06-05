@@ -1,6 +1,7 @@
 package com.edudeveloper.erp.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -39,13 +40,24 @@ public class Empresa implements Serializable {
     @Column(name = "data_fundacao")
     private Date dataFundacao;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 30)
-    private TipoEmpresa tipo;
-
     @ManyToOne
     @JoinColumn(name = "ramo_atividade_id", nullable = false)
     private RamoAtividade ramoAtividade;
+    
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 30)
+    private TipoEmpresa tipo;
+    
+    @Column(precision = 10, scale = 2)
+    private BigDecimal faturamento;
+    
+    private BigDecimal getFaturamento() {
+    	return faturamento;
+    }
+    
+    public void setFaturamento(BigDecimal faturamento) {
+    	this.faturamento = faturamento;
+    }
 
     public Long getId() {
         return id;

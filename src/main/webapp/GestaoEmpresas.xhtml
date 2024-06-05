@@ -29,11 +29,24 @@
 							var="tipoEmpresa" itemLabel="#{tipoEmpresa.descricao}" itemValue="#{tipoEmpresa}"/>
 					</h:selectOneMenu>
 					
-					<h:outputLabel />
-					<h:commandButton value="Salvar" actionListener="#{gestaoEmpresasBean.salvar()}"/>
+					<h:outputLabel value="Data de Fundação" for="dataFundacao"/>
+					<h:panelGroup>
+						<h:inputText id="dataFundacao" value="#{gestaoEmpresasBean.empresa.dataFundacao}"
+						label="Data Fundação: ">
+							<f:convertDateTime pattern="dd/mm/yyyy"/>
+						</h:inputText>
+					
+						<h:message for="dataFundacao"/>
+					</h:panelGroup>
+					
+					<h:outputLabel value="Faturamento: " for="faturamento" />
+					<h:inputText id="faturamento" value="#{gestaoEmpresasBean.empresa.faturamento}"/>
 					
 					<h:outputLabel />
-					<h:commandLink value="Ajuda" action=#{gestaoEmpresasBean.ajuda}/>			
+					<h:commandButton value="Salvar" actionListener="#{gestaoEmpresasBean.salvar}"/>
+					
+					<h:outputLabel />
+					<h:commandLink value="Ajuda?" action="#{gestaoEmpresasBean.ajuda}"/>			
 				</h:panelGrid>
 				
 				 <!-- Lista informações para o usuário -->
