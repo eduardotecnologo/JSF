@@ -1,10 +1,54 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:lang="pt-br" xmlns:h="http://xmlns.jcp.org/jsf/html">
-<head>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:lang="pt-br">
+      
+<h:head>
     <meta charset="UTF-8"/>
     <title>Gestaão de Empresas</title>
-</head>
-    <body>
-		<h:outputText value="Olá mundo!" />
-    </body>
+    <h:outputStylesheet library="edudeveloper" name="style.css"/>
+</h:head>
+    <h:body>
+    	<header>
+    		<h:graphicImage library="edudeveloper" name="logo.png" styleClass="logo"/>
+    	</header>
+		<div id="conteudo">
+			<h:form>
+				<h:panelGrid columns="2">
+					<h:outputLabel value="Razão Social: " for="razaoSocial"/>
+					<h:inputText id="razaoSocial" value="#{gestaoEmpresasBean.empresa.razaoSocial}"/>
+					
+					<h:outputLabel value="Nome fantasia:" for="nomeFantasia"/>
+					<h:inputText id="nomeFantasia" value="#{gestaoEmpresasBean.empresa.nomeFantasia}"/>
+					
+					<h:outputLabel value="Tipo de Empresa:" for="tipo"/>
+					<h:selectOneMenu id="tipo" value="#{gestaoEmpresasBean.empresa.tipo}">
+						<f:selectItem itemLabel="Selecione..."/>
+						<f:selectItems value="#{gestaoEmpresasBean.tiposEmpresa}"
+							var="tipoEmpresa" itemLabel="#{tipoEmpresa.descricao}" itemValue="#{tipoEmpresa}"/>
+					</h:selectOneMenu>
+					
+					<h:outputLabel />
+					<h:commandButton value="Salvar" actionListener="#{gestaoEmpresasBean.salvar()}"/>
+					
+					<h:outputLabel />
+					<h:commandLink value="Ajuda" action=#{gestaoEmpresasBean.ajuda}/>			
+				</h:panelGrid>
+				
+				 <!-- Lista informações para o usuário -->
+				<h:dataTable>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Razão Social" />
+						</f:facet>
+					</h:column>
+				</h:dataTable>
+			</h:form>
+		</div>
+		
+		<footer>
+			Gestão de Empresas | by edudeveloper
+		</footer>
+    </h:body>
 </html>
