@@ -19,6 +19,7 @@
 			<groupId>org.glassfish</groupId>
 			<artifactId>javax.faces</artifactId>
 			<version>2.4.0</version>
+			<scope>compile</scope>
 		</dependency>
 
     	<dependency>
@@ -29,8 +30,9 @@
 
 		<dependency>
 			<groupId>org.primefaces</groupId>
-			<artifactId>primefaces</artifactId>
-			<version>11.0.0</version>
+		    <artifactId>primefaces</artifactId>
+		    <version>13.0.0</version>
+			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
