@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:lang="pt-br">
+      
+ <h:head>
+    <meta charset="UTF-8"/>
+    <title>Gestaão de Empresas</title>
+    <h:outputStylesheet library="edudeveloper" name="style.css"/>
+    
+    
+ </h:head>
+    <h:body>
+  	<header>
+  		<h:graphicImage library="edudeveloper" name="logo.png" styleClass="logo"/>
+  	</header>
+  	
+  	<h2><ui:insert name="titulo"/></h2>
+
+	<!-- CONTEUDO -->
+  <div id="conteudo">
+	<ui:insert name="conteudo"/>
+  </div>
+
+ <footer>
+	Gestão de Empresas | by edudeveloper
+ </footer>
+    </h:body>
+</html>
